@@ -2,8 +2,10 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib import messages
 from .forms import ComicsForm
 from comics.models import Comic, Editorial, Autor
+from django.contrib.auth.decorators import login_required
 
-# Create your views here.
+
+@login_required
 def comic_nueva(request):
     if request.method == 'POST':
         formulario = ComicsForm(request.POST, request.FILES)

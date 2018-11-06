@@ -1,4 +1,4 @@
-{% extends 'comics/base.html' %}
+{% extends 'comics/index.html' %}
 
 
 {% block content %}
@@ -19,6 +19,6 @@
                            {{ c.nombre }}
                          </li>
 {% endfor %}
-<a class="btn btn-default" href="{% url 'editar_comic' pk=comic.pk %}"><span class="glyphicon glyphicon-pencil">editar</span></a>
-<a class="btn btn-default" href="{% url 'eliminar_comic' pk=comic.pk %}"><span class="glyphicon glyphicon-trash">eliminar</span></a>
+<a class="btn btn-default" href="{% url 'editar_comic' pk=comic.pk %}"><span class="glyphicon glyphicon-pencil">Editar</span></a>
+<a class="btn btn-default" href="{% url 'eliminar_comic' pk=comic.pk %}"><span class="glyphicon glyphicon-trash">Eliminar</span></a>
 {% endblock %}

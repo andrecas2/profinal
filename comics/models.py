@@ -21,17 +21,12 @@ class Autor(models.Model):
 
 
     class Meta:
-                verbose_name="Autores"
+                verbose_name="Autor"
                 verbose_name_plural="Autores"
-                ordering = ["nombre"]
+                ordering = ["-nombre"]
 
     def __str__(self): #devuelve el nombre del proyecto
         return self.nombre
-
-    def __str__(self):
-
-        return self.nombre
-
 
 class Comic(models.Model):
 

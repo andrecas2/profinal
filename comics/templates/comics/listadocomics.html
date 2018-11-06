@@ -1,14 +1,37 @@
-{% extends 'comics/base.html' %}
+{% extends 'comics/index2.html' %}
 
 {% block content %}
-  {% for co in comic %}
-       <div class="post">
-           <div class="date">
-               {{ co.nombre }}
-           </div>
 
-          <h1><a href="{% url 'detalle_comic' pk=co.pk %}">{{ co.fecha_publicacion }}</a></h1>
-          <a class="btn btn-default" href="{% url 'comic_nueva'  %}"><span class="glyphicon glyphicon-pencil">agregar nuevo</span></a>
-       </div>
-   {% endfor %}
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="experience">
+        <div class="my-auto">
+          <h2 class="mb-5">Listado comics</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+              {% for co in comic %}
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0"><a href="{% url 'detalle_comic' pk=co.pk %}"></a>{{ co.nombre }}</h3>
+
+            <div class="resume-date text-md-right">
+              <span class="text-primary">{{ co.fecha_publicacion }}</span>
+            </div>
+          </div>
+
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0"><a class="btn btn-default" href="{% url 'comic_nueva'  %}"><span class="glyphicon glyphicon-pencil">agregar nuevo</span></a></h3>
+              <h3 class="mb-0"><a class="btn btn-default" href="{% url 'detalle_comic' pk=co.pk %}"><span class="glyphicon glyphicon-pencil">mostrar detalle</span></a></h3>
+
+          </div>
+  {% endfor %}
+        
+
+        </div>
+
+      </section>
+
+
+
+
+
     {% endblock %}

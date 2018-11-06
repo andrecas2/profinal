@@ -1,0 +1,14 @@
+{% extends 'comics/base.html' %}
+
+{% block content %}
+  {% for co in comic %}
+       <div class="post">
+           <div class="date">
+               {{ co.nombre }}
+           </div>
+
+          <h1><a href="{% url 'detalle_comic' pk=co.pk %}">{{ co.fecha_publicacion }}</a></h1>
+          <a class="btn btn-default" href="{% url 'comic_nueva'  %}"><span class="glyphicon glyphicon-pencil">agregar nuevo</span></a>
+       </div>
+   {% endfor %}
+    {% endblock %}
